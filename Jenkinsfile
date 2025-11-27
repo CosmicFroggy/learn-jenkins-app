@@ -7,5 +7,10 @@ pipeline {
                 bat 'dir && node --version && npm --version && npm ci && npm run build && dir'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'test stage'
+            }
+        }
     }
 }
