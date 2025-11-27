@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'npm ci'
+                bat 'dir && node --version && npm --version && npm ci && dir'
             }
         }
     }
