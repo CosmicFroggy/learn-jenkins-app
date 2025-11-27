@@ -9,8 +9,11 @@ pipeline {
         // }
         stage('Test') {
             steps {
-                echo 'test stage'
-                dir
+                if (fileExists('build/index.html')) {
+                    bat 'npm test'
+                } else {
+                    echo 'build failed!!'
+                }
             }
         }
     }
